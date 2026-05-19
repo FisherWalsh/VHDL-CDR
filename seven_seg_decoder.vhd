@@ -1,12 +1,12 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY SevenSegDecoder IS
+ENTITY seven_seg_decoder IS
 	PORT(	in_4bit : IN std_logic_vector(3 downto 0);
 			out_HEX : OUT std_logic_vector(6 downto 0));
-END SevenSegDecoder;
+END seven_seg_decoder;
 
-ARCHITECTURE behaviour of SevenSegDecoder IS
+ARCHITECTURE behaviour of seven_seg_decoder IS
 BEGIN
 	PROCESS (in_4bit)
 	BEGIN

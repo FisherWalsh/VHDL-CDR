@@ -19,7 +19,7 @@ architecture behaviour of error_counter is
 	-- unsigned is used to make use of easy addition and subtraction
 	signal counter : unsigned(15 downto 0);
 
-	component SevenSegDecoder
+	component seven_seg_decoder
 		PORT(
 			in_4bit : IN std_logic_vector(3 downto 0);
 			out_HEX : OUT std_logic_vector(6 downto 0)
@@ -48,22 +48,22 @@ architecture behaviour of error_counter is
 		end process;
 
 		-- declares 7 seg displays
-		hex_0 : SevenSegDecoder port map(
+		hex_0 : seven_seg_decoder port map(
 			in_4bit => std_logic_vector(counter(15 downto 12)),
 			out_HEX => disp_0
 		);
 
-		hex_1 : SevenSegDecoder port map(
+		hex_1 : seven_seg_decoder port map(
 			in_4bit => std_logic_vector(counter(11 downto 8)),
 			out_HEX => disp_1
 		);
 
-		hex_2 : SevenSegDecoder port map(
+		hex_2 : seven_seg_decoder port map(
 			in_4bit => std_logic_vector(counter(7 downto 4)),
 			out_HEX => disp_2
 		);
 
-		hex_3 : SevenSegDecoder port map(
+		hex_3 : seven_seg_decoder port map(
 			in_4bit => std_logic_vector(counter(3 downto 0)),
 			out_HEX => disp_3
 		);
